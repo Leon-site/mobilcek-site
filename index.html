@@ -1,134 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mobilček Servis | Domov</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobilček Servis — Domov</title>
+  <meta name="description" content="Moderna trgovina z elektroniko, belo tehniko, nagradno igro in funkcionalno košarico.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="topbar container">
-      <a class="logo" href="index.html" aria-label="Mobilček Servis">
-        <span class="logo-mark">MOBILČEK</span>
-        <span class="logo-sub">SERVIS</span>
-      </a>
-      <form class="searchbar" onsubmit="event.preventDefault(); site.searchProducts();">
-        <input id="searchInput" type="search" placeholder="Kateri izdelek iščeš? Vnesi iskalni niz ..." />
-        <button type="submit">Išči</button>
-      </form>
-      <div class="header-actions">
-        <a href="reviews.html">Recenzije</a>
-        <button class="cart-button" onclick="site.openCart()">Košarica <span id="cartCount">0</span></button>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html"><span class="brand-badge">M</span> MOBILČEK SERVIS</a>
+      <div class="searchbar">
+        <input id="siteSearch" type="text" placeholder="Kateri izdelek iščeš? Vnesi iskalni niz ...">
+        <button id="searchBtn">Išči</button>
+      </div>
+      <div class="top-actions">
+        <a class="icon-btn" href="reviews.html" title="Recenzije">★</a>
+        <a class="icon-btn" href="cart.html" title="Košarica">🛒<span class="cart-count" data-cart-count>0</span></a>
       </div>
     </div>
     <nav class="navbar">
-      <div class="container nav-links">
-        <a class="active" href="index.html">Domov</a>
-        <a href="telefonija.html">Telefonija</a>
-        <a href="racunalniki.html">Računalniki</a>
-        <a href="bela-tehnika.html">Bela tehnika</a>
-        <a href="giveaway.html">Nagradna igra</a>
-        <a href="about.html">O nas</a>
+      <div class="container nav-inner">
+        <div class="nav-links">
+          <a class="nav-pill active" href="index.html">Domov</a>
+          <a class="nav-pill" href="telefonija.html">Telefonija</a>
+          <a class="nav-pill" href="racunalniki.html">Računalniki</a>
+          <a class="nav-pill" href="bela-tehnika.html">Bela tehnika</a>
+          <a class="nav-pill" href="nagradna-igra.html">Nagradna igra</a>
+          <a class="nav-pill" href="reviews.html">Recenzije</a>
+          <a class="nav-pill" href="o-nas.html">O nas</a>
+        </div>
+        <div class="nav-meta">
+          <span class="nav-pill">Hitra dostava</span>
+          <span class="nav-pill">Podpora</span>
+        </div>
       </div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Moderna ponudba • črno rdeč stil • pregleden nakup</p>
-          <h1>Pridobi si nagrado.</h1>
-          <p class="hero-text">Pridruži se naši dobrodelni nagradni igri za samo <strong>1 €</strong>. Celoten znesek prijav gre v dobrodelne namene, glavni dobitek pa je <strong>grafična kartica RTX 5090</strong>.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="giveaway.html">Sodeluj zdaj</a>
-            <a class="btn btn-secondary" href="#featured">Poglej ponudbo</a>
-          </div>
-          <div class="hero-badges">
-            <span>Funkcionalna košarica</span>
-            <span>Koda popusta: MOBILČEK2026</span>
-            <span>Mini igra za dodatni kupon</span>
-          </div>
-        </div>
+      <div class="container">
         <div class="hero-card">
-          <div class="glow"></div>
-          <div class="prize-card">
-            <p class="prize-label">Glavna nagrada</p>
-            <h2>RTX 5090</h2>
-            <p>Dobrodelna prijavnina: 1 €</p>
-            <p>Enostavna pravila, jasni pogoji, brez skritih zank.</p>
-            <a class="btn btn-primary full" href="giveaway.html">Preberi pravila</a>
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span> Moderna črno-rdeča trgovina</div>
+              <h1>Pridobi si nagrado.</h1>
+              <p>Pridruži se naši dobrodelni nagradni igri za samo <strong>1 €</strong>. Celoten znesek prijav gre v dobrodelne namene, glavni dobitek pa je <strong>grafična kartica RTX 5090</strong>. Poleg tega te čakajo funkcionalna košarica, kuponi in mini igra za dodatni popust.</p>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="nagradna-igra.html">Sodeluj zdaj</a>
+                <a class="btn btn-secondary" href="#featured">Poglej ponudbo</a>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="hero-prize">
+                <div class="hero-badge">1 € prijavnina</div>
+                <div class="gpu">
+                  <div class="fans"><div class="fan"></div><div class="fan"></div><div class="fan"></div></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="quick-categories container">
-      <a class="cat-card" href="telefonija.html"><span>Telefonija</span><strong>Pametni telefoni, dodatki, servis</strong></a>
-      <a class="cat-card" href="racunalniki.html"><span>Računalniki</span><strong>Prenosniki, komponente, gaming</strong></a>
-      <a class="cat-card" href="bela-tehnika.html"><span>Bela tehnika</span><strong>Pralni stroji, hladilniki, sesalniki</strong></a>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Osnovne vrste izdelkov</h2>
+            <p>Pregledna postavitev po glavnih kategorijah, z jasnimi teksti in hitrim dostopom.</p>
+          </div>
+        </div>
+        <div class="grid-cats">
+          <a class="cat-card" href="telefonija.html">
+            <div class="cat-icon">📱</div>
+            <h3>Telefonija</h3>
+            <p>Pametni telefoni, dodatki, slušalke, ure in servis.</p>
+            <span class="btn btn-secondary">Odpri</span>
+          </a>
+          <a class="cat-card" href="racunalniki.html">
+            <div class="cat-icon">💻</div>
+            <h3>Računalniki</h3>
+            <p>Prenosniki, monitorji, komponente, gaming oprema.</p>
+            <span class="btn btn-secondary">Odpri</span>
+          </a>
+          <a class="cat-card" href="bela-tehnika.html">
+            <div class="cat-icon">🧺</div>
+            <h3>Bela tehnika</h3>
+            <p>Pralni stroji, hladilniki, sesalniki in mali aparati.</p>
+            <span class="btn btn-secondary">Odpri</span>
+          </a>
+          <a class="cat-card" href="reviews.html">
+            <div class="cat-icon">⭐</div>
+            <h3>Recenzije</h3>
+            <p>Mnenja strank in možnost odgovora prek admin načina.</p>
+            <span class="btn btn-secondary">Odpri</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="section container" id="featured">
-      <div class="section-head">
-        <h2>Izpostavljeni izdelki</h2>
-        <a href="telefonija.html">Poglej vse</a>
+    <section class="section">
+      <div class="container">
+        <div class="promo-grid">
+          <div class="promo-card">
+            <span class="ribbon">Dobrodelna nagradna igra</span>
+            <h3>RTX 5090 kot glavna nagrada</h3>
+            <p>Enostavna pravila, jasni pogoji in prijava brez nepotrebnih zapletov. Vse prijavnine gredo za dobrodelne namene, sodelovanje pa stane samo 1 €.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="nagradna-igra.html">Preberi pravila</a>
+              <a class="btn btn-secondary" href="cart.html">Odpri košarico</a>
+            </div>
+          </div>
+          <div class="promo-card">
+            <span class="ribbon">Popusti</span>
+            <h3>Vnesi kodo in prihrani.</h3>
+            <p>Uporabi kodo <strong>MOBILČEK2026</strong> in dobi <strong>25 % popusta</strong> v košarici. Na strani nagradne igre te čaka še mini igra za dodatni bonus kupon.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="cart.html">Uporabi kodo</a>
+              <a class="btn btn-secondary" href="nagradna-igra.html#mini-igra">Mini igra</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="product-grid" id="featuredProducts"></div>
     </section>
 
-    <section class="section container promo-section">
-      <div class="promo-box">
-        <div>
-          <p class="eyebrow">Popusti</p>
-          <h2>Vnesi kodo in prihrani.</h2>
-          <p>Uporabi kodo <strong>MOBILČEK2026</strong> in dobi <strong>25 % popusta</strong> v košarici.</p>
+    <section class="section" id="featured">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Izpostavljeni izdelki</h2>
+            <p>Preprost katalog z jasno ceno, osnovnimi oznakami in gumbi za nakup.</p>
+          </div>
+          <a class="btn btn-secondary" href="cart.html">Poglej vse</a>
         </div>
-        <button class="btn btn-primary" onclick="site.openCart()">Odpri košarico</button>
+        <div class="product-grid" id="featuredProducts"></div>
       </div>
-      <div class="promo-box alt">
-        <div>
-          <p class="eyebrow">Mini igra</p>
-          <h2>Ujemi pravi kvadrat.</h2>
-          <p>Če zadeneš pravi kvadrat v treh poskusih, dobiš bonus kodo za dodatni popust.</p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="info-grid">
+          <article class="info-card">
+            <div class="cat-icon">🛒</div>
+            <h3>Funkcionalna košarica</h3>
+            <p>Dodajanje izdelkov, spreminjanje količine, obračun popusta in testni zaključek naročila.</p>
+          </article>
+          <article class="info-card">
+            <div class="cat-icon">🎟️</div>
+            <h3>Kuponi in popusti</h3>
+            <p>Aktivna koda <strong>MOBILČEK2026</strong> zniža celotno naročilo za 25 %.</p>
+          </article>
+          <article class="info-card">
+            <div class="cat-icon">💬</div>
+            <h3>Recenzije in odgovori</h3>
+            <p>Stranke lahko oddajo mnenje, lastnik pa lahko prek admin načina odgovori na recenzije.</p>
+          </article>
         </div>
-        <a class="btn btn-secondary" href="minigame.html">Zaženi mini igro</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Mobilček Servis</h3>
-        <p>Moderna spletna trgovina z osnovnimi kategorijami izdelkov, pregleden nakup in dobrodelna nagradna igra.</p>
+        <h4>Mobilček Servis</h4>
+        <p>Moderna demo trgovina, oblikovana po navdihu velikih tehničnih trgovin, vendar v svojem črno-rdečem slogu.</p>
       </div>
       <div>
-        <h4>Povezave</h4>
-        <a href="index.html">Domov</a>
-        <a href="telefonija.html">Telefonija</a>
-        <a href="racunalniki.html">Računalniki</a>
-        <a href="bela-tehnika.html">Bela tehnika</a>
+        <h4>Kategorije</h4>
+        <p><a href="telefonija.html">Telefonija</a></p>
+        <p><a href="racunalniki.html">Računalniki</a></p>
+        <p><a href="bela-tehnika.html">Bela tehnika</a></p>
       </div>
       <div>
         <h4>Podpora</h4>
-        <a href="about.html">O nas</a>
-        <a href="reviews.html">Recenzije</a>
-        <a href="giveaway.html">Pravila nagradne igre</a>
+        <p><a href="reviews.html">Recenzije</a></p>
+        <p><a href="cart.html">Košarica</a></p>
+        <p><a href="nagradna-igra.html">Nagradna igra</a></p>
+      </div>
+      <div>
+        <h4>O nas</h4>
+        <p><a href="o-nas.html">Preberi več o trgovini, poslanstvu in preglednih pravilih.</a></p>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p>© 2026 Mobilček Servis. Vzorec statične strani za objavo na hostingu.</p>
-    </div>
+    <div class="container footer-bottom">© 2026 Mobilček Servis. Statična demonstracijska trgovina.</div>
   </footer>
-
-  <div id="cartDrawer" class="cart-drawer hidden"></div>
-  <script src="assets/data.js"></script>
-  <script src="assets/app.js"></script>
-  <script>site.renderFeatured(); site.renderCartCount();</script>
+  <script src="app.js"></script>
 </body>
 </html>

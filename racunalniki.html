@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="sl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mobilček Servis | Računalniki</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <div data-include="header"></div>
-  <main class="container page-space">
-    <div class="page-hero small">
-      <p class="eyebrow">Računalniki</p>
-      <h1>Gaming, prenosniki in komponente</h1>
-      <p>Preprosta ponudba računalnikov, komponent in dodatkov za delo ali gaming.</p>
-    </div>
-    <div class="product-grid" id="racunalnikiProducts"></div>
-  </main>
-  <div data-include="footer"></div>
-  <div id="cartDrawer" class="cart-drawer hidden"></div>
-  <script src="assets/data.js"></script>
-  <script src="assets/app.js"></script>
-  <script>site.renderLayout('racunalniki'); site.renderProductsByCategory('racunalniki','racunalnikiProducts');</script>
-</body>
-</html>
+<!doctype html><html lang="sl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Računalniki — Mobilček Servis</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="topbar"><div class="container topbar-inner"><a class="brand" href="index.html"><span class="brand-badge">M</span> MOBILČEK SERVIS</a><div class="searchbar"><input id="siteSearch" type="text" placeholder="Kateri izdelek iščeš? Vnesi iskalni niz ..."><button id="searchBtn">Išči</button></div><div class="top-actions"><a class="icon-btn" href="reviews.html">★</a><a class="icon-btn" href="cart.html">🛒<span class="cart-count" data-cart-count>0</span></a></div></div><nav class="navbar"><div class="container nav-inner"><div class="nav-links"><a class="nav-pill" href="index.html">Domov</a><a class="nav-pill" href="telefonija.html">Telefonija</a><a class="nav-pill active" href="racunalniki.html">Računalniki</a><a class="nav-pill" href="bela-tehnika.html">Bela tehnika</a><a class="nav-pill" href="nagradna-igra.html">Nagradna igra</a><a class="nav-pill" href="reviews.html">Recenzije</a><a class="nav-pill" href="o-nas.html">O nas</a></div></div></nav></header>
+<main><section class="page-hero"><div class="container"><div class="page-hero-card"><div class="breadcrumbs"><span>Domov</span><span>•</span><span>Računalniki</span></div><h1>Računalniki</h1><p class="muted">Prenosniki, gaming sestave, monitorji in dodatki za delo ali zabavo.</p></div></div></section><section class="section"><div class="container"><div class="product-grid" id="pcProducts"></div></div></section></main>
+<footer class="footer"><div class="container footer-bottom">© 2026 Mobilček Servis.</div></footer><script src="app.js"></script></body></html>
