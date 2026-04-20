@@ -284,3 +284,122 @@ textarea { min-height: 130px; resize: vertical; }
   .inline-form { grid-template-columns: 1fr; }
   .product-actions { flex-direction: column; }
 }
+
+
+.brand {
+  min-width: 0;
+}
+.brand-logo-wrap{
+  display:grid; place-items:center;
+  width: 150px; height: 56px;
+  padding: 6px 10px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 8px 30px rgba(0,0,0,.22);
+}
+.brand-logo{
+  width: 100%;
+  max-width: 132px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(226,27,47,.18));
+}
+.brand-copy{
+  display:grid;
+  line-height:1.05;
+}
+.brand-title{
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.brand-sub{
+  color: var(--muted);
+  font-size: .78rem;
+  letter-spacing: .02em;
+}
+
+.question-game{
+  display:grid;
+  gap:18px;
+}
+.question-top{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+.score-pill{
+  min-width: 180px;
+  text-align:center;
+  padding:14px 18px;
+  border-radius:18px;
+  background: rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+.question-card{
+  padding: 26px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow: var(--shadow);
+}
+.question-text{
+  font-size: 1.45rem;
+  line-height: 1.35;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+.question-options{
+  display:grid;
+  gap:12px;
+}
+.question-option{
+  text-align:left;
+  width:100%;
+  padding:16px 18px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.035);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.question-option:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.07);
+}
+.payment-preview{
+  display:grid;
+  gap:14px;
+  margin-top:16px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.payment-methods{
+  display:grid;
+  gap:10px;
+}
+.payment-method{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.04);
+}
+.disabled-checkout{
+  opacity: .65;
+  cursor: not-allowed;
+}
+@media (max-width: 900px){
+  .brand-copy{ display:none; }
+  .brand-logo-wrap{ width: 116px; height: 50px; }
+  .question-top{ flex-direction:column; }
+  .score-pill{ min-width: 0; width:100%; }
+}

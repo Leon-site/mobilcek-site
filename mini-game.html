@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini igra — Mobilček Servis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="Mobilček Servis">
+        <span class="brand-logo-wrap">
+          <img class="brand-logo" src="assets/logo-mobilcek.png" alt="Mobilček Servis logo">
+        </span>
+        <span class="brand-copy">
+          <span class="brand-title">Mobilček Servis</span>
+          <span class="brand-sub">Elektronika, servis in akcije</span>
+        </span>
+      </a>
+      <div class="searchbar">
+        <input id="siteSearch" type="text" placeholder="Kateri izdelek iščeš? Vnesi iskalni niz ...">
+        <button id="searchBtn">Išči</button>
+      </div>
+      <div class="top-actions">
+        <a class="icon-btn" href="reviews.html" title="Recenzije">★</a>
+        <a class="icon-btn" href="cart.html" title="Košarica">🛒<span class="cart-count" data-cart-count>0</span></a>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <div class="nav-links">
+          <a class="nav-pill" href="index.html">Domov</a>
+          <a class="nav-pill" href="telefonija.html">Telefonija</a>
+          <a class="nav-pill" href="racunalniki.html">Računalniki</a>
+          <a class="nav-pill" href="bela-tehnika.html">Bela tehnika</a>
+          <a class="nav-pill" href="nagradna-igra.html">Nagradna igra</a>
+          <a class="nav-pill active" href="mini-game.html">Mini igra</a>
+          <a class="nav-pill" href="reviews.html">Recenzije</a>
+          <a class="nav-pill" href="o-nas.html">O nas</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-card">
+          <div class="breadcrumbs"><span>Domov</span><span>•</span><span>Mini igra</span></div>
+          <h1>Vprašanja za bonus kodo</h1>
+          <p class="muted">Odgovori na vprašanja, ki se ob vsakem obisku premešajo. Ko zbereš 3 pravilne odgovore, dobiš kupon <strong>BONUS10</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container game-grid">
+        <div class="question-game" id="questionGame">
+          <div class="question-top">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span> Interaktivna mini igra</div>
+              <h2 id="gameQuestionTitle">Nalagam vprašanje ...</h2>
+              <p class="muted" id="gameQuestionMeta">Doseži 3 pravilne odgovore za bonus.</p>
+            </div>
+            <div class="score-pill">Pravilno zapored: <strong id="gameStreak">0</strong>/3</div>
+          </div>
+
+          <div class="question-card">
+            <div id="gameQuestion" class="question-text"></div>
+            <div id="gameOptions" class="question-options"></div>
+            <div id="gameResult" class="top-space"></div>
+          </div>
+
+          <div class="cta-row top-space">
+            <button class="btn btn-secondary" id="nextQuestionBtn" type="button">Naslednje vprašanje</button>
+            <a class="btn btn-primary" href="cart.html">V košarico</a>
+          </div>
+        </div>
+
+        <aside class="game-card">
+          <h3>Kako deluje</h3>
+          <div class="notice success">3 pravilni odgovori = <strong>BONUS10</strong></div>
+          <ul class="rules-list">
+            <li>Vprašanja se ob vsakem obisku premešajo.</li>
+            <li>Po pravilnem odgovoru dobiš novo vprašanje.</li>
+            <li>Ob napačnem odgovoru se niz ponastavi.</li>
+            <li>Kodo lahko uporabiš v košarici skupaj z demo plačilnim korakom.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">© 2026 Mobilček Servis.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

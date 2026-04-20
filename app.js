@@ -19,6 +19,17 @@ const REVIEWS_KEY = 'mobilcek_reviews_v2';
 const CART_KEY = 'mobilcek_cart_v2';
 const COUPON_KEY = 'mobilcek_coupon_v2';
 const MINIGAME_KEY = 'mobilcek_minigame_reward_v2';
+const MINIGAME_SESSION_KEY = 'mobilcek_minigame_session_v3';
+const MINIGAME_QUESTIONS = [
+  {q:'Katera koda na tej strani ti da 25 % popusta v košarici?', options:['BONUS10','MOBILČEK2026','RTX5090NOW'], answer:1},
+  {q:'Koliko stane prijavnina za dobrodelno nagradno igro?', options:['1 €','5 €','10 €'], answer:0},
+  {q:'Katera glavna nagrada je izpostavljena na strani?', options:['PlayStation 5','iPhone 16 Pro','RTX 5090'], answer:2},
+  {q:'V kateri kategoriji najdeš prenosnike in monitorje?', options:['Računalniki','Telefonija','Bela tehnika'], answer:0},
+  {q:'Kje lahko oddaš svojo oceno trgovine?', options:['Na strani Recenzije','Samo v košarici','Samo po emailu'], answer:0},
+  {q:'Za kaj so namenjena zbrana sredstva iz prijavnine?', options:['Za dobrodelne namene','Za poštnino','Za skrite stroške'], answer:0},
+  {q:'Katera dodatna koda se odklene v mini igri?', options:['BONUS10','GAME50','SERVIS20'], answer:0},
+  {q:'Katera kategorija vsebuje pralne stroje in hladilnike?', options:['Telefonija','Bela tehnika','Računalniki'], answer:1}
+];
 const ADMIN_EMAIL = 'francekleon26@gmail.com';
 const DEFAULT_REVIEWS = [
   {id:'r1',name:'Luka',email:'luka@example.com',rating:5,title:'Odlična izkušnja',text:'Stran je pregledna, naročilo hitro in vse je bilo jasno.',reply:'Hvala za zaupanje. Veseli nas, da je bilo vse hitro in pregledno.'},
@@ -49,6 +60,22 @@ function getCoupon(){ return JSON.parse(localStorage.getItem(COUPON_KEY) || 'nul
 function setCoupon(coupon){ localStorage.setItem(COUPON_KEY, JSON.stringify(coupon)); }
 function getGameReward(){ return JSON.parse(localStorage.getItem(MINIGAME_KEY) || 'null'); }
 function setGameReward(data){ localStorage.setItem(MINIGAME_KEY, JSON.stringify(data)); }
+function getGameSession(){ return JSON.parse(localStorage.getItem(MINIGAME_SESSION_KEY) || '{"streak":0,"lastIndexes":[]}'); }
+function setGameSession(data){ localStorage.setItem(MINIGAME_SESSION_KEY, JSON.stringify(data)); }
+function pickQuestion(){
+  const session = getGameSession();
+  const used = new Set(session.lastIndexes || []);
+  let pool = MINIGAME_QUESTIONS.map((q,index)=>({q,index})).filter(item=>!used.has(item.index));
+  if(!pool.length){
+    session.lastIndexes = [];
+    setGameSession(session);
+    pool = MINIGAME_QUESTIONS.map((q,index)=>({q,index}));
+  }
+  const picked = pool[Math.floor(Math.random()*pool.length)];
+  session.lastIndexes = [...(session.lastIndexes || []), picked.index].slice(-5);
+  setGameSession(session);
+  return picked.q;
+}
 function productById(id){ return PRODUCTS.find(p=>p.id===id); }
 function cartTotals(){
   const cart = getCart();
@@ -153,7 +180,16 @@ function renderCartPage(){
         <div style="display:flex;justify-content:space-between;font-size:1.15rem;"><span>Skupaj</span><strong>${euro(totals.total)}</strong></div>
       </div>
       <div class="notice warn top-space">Aktivna koda: ${coupon?.code || 'ni uporabljena'}</div>
-      <button class="btn btn-primary" style="width:100%;margin-top:8px;" onclick="checkoutDemo()">Zaključi testno naročilo</button>
+      <button class="btn btn-primary" style="width:100%;margin-top:8px;" onclick="togglePaymentPreview()">Nadaljuj na plačilo</button>
+      <div id="paymentPreview" class="payment-preview" hidden>
+        <div class="small">Plačilni korak je prikazan kot demo. Uporabnik lahko nadaljuje do pregleda plačila, končnega nakupa pa ne more zaključiti.</div>
+        <div class="payment-methods">
+          <div class="payment-method"><span>Kartično plačilo</span><strong>Demo</strong></div>
+          <div class="payment-method"><span>PayPal</span><strong>Demo</strong></div>
+          <div class="payment-method"><span>Nakazilo</span><strong>Demo</strong></div>
+        </div>
+        <button class="btn btn-secondary disabled-checkout" style="width:100%;" disabled>Oddaj naročilo — onemogočeno v demo načinu</button>
+      </div>
       <div class="small top-space">To je statična demonstracija. Za pravo plačilo potrebuješ backend ali ponudnika plačil.</div>
     </div>`;
   qs('#couponForm')?.addEventListener('submit', e=>{
@@ -165,6 +201,13 @@ function renderCartPage(){
       toast('Ta koda ni veljavna.', 'error');
     }
   });
+}
+function togglePaymentPreview(){
+  const preview = qs('#paymentPreview');
+  if(!preview) return;
+  if(!getCart().length) return toast('Košarica je prazna.', 'error');
+  preview.hidden = !preview.hidden;
+  if(!preview.hidden) toast('Prikazan je demo plačilni korak.', 'success');
 }
 function checkoutDemo(){
   if(!getCart().length) return toast('Košarica je prazna.', 'error');
@@ -240,20 +283,77 @@ function saveReply(id){
   saveReviews(reviews); renderReviews(); renderAdminReplies(); toast('Odgovor je shranjen.', 'success');
 }
 function bindMinigame(){
+  const wrap = qs('#questionGame');
   const result = qs('#gameResult');
+  const streakEl = qs('#gameStreak');
+  const nextBtn = qs('#nextQuestionBtn');
   const reward = getGameReward();
-  if(reward && result) result.innerHTML = `<div class="notice success">Že imaš bonus kodo: <strong>${reward.code}</strong></div>`;
-  qsa('.choice-btn').forEach(btn=>btn.addEventListener('click', ()=>{
-    const good = btn.dataset.good === '1';
-    if(good){
-      setGameReward({code:'BONUS10'});
-      result.innerHTML = `<div class="notice success">Bravo. Dobil si bonus kodo <strong>BONUS10</strong> za 10 % popusta.</div>`;
-      toast('Osvojil si BONUS10.', 'success');
-    } else {
-      result.innerHTML = `<div class="notice error">Tokrat ni uspelo. Poskusi ponovno po osvežitvi strani.</div>`;
-      toast('Napačna izbira.', 'error');
-    }
-  }));
+  const simpleChoices = qsa('.choice-btn');
+
+  if(simpleChoices.length && result){
+    if(reward) result.innerHTML = `<div class="notice success">Že imaš bonus kodo: <strong>${reward.code}</strong></div>`;
+    simpleChoices.forEach(btn=>btn.addEventListener('click', ()=>{
+      const good = btn.dataset.good === '1';
+      if(good){
+        setGameReward({code:'BONUS10'});
+        result.innerHTML = `<div class="notice success">Bravo. Dobil si bonus kodo <strong>BONUS10</strong> za 10 % popusta.</div>`;
+        toast('Osvojil si BONUS10.', 'success');
+      } else {
+        result.innerHTML = `<div class="notice error">Tokrat ni uspelo. Poskusi ponovno po osvežitvi strani.</div>`;
+        toast('Napačna izbira.', 'error');
+      }
+    }));
+  }
+
+  if(!wrap) return;
+
+  const questionText = qs('#gameQuestion');
+  const optionsWrap = qs('#gameOptions');
+  const meta = qs('#gameQuestionMeta');
+
+  function refreshStreak(){
+    const session = getGameSession();
+    if(streakEl) streakEl.textContent = session.streak || 0;
+  }
+
+  function renderQuestion(){
+    const question = pickQuestion();
+    wrap.dataset.answer = String(question.answer);
+    if(questionText) questionText.textContent = question.q;
+    if(meta) meta.textContent = 'Doseži 3 pravilne odgovore zapored in prejmi BONUS10.';
+    optionsWrap.innerHTML = question.options.map((opt,index)=>`<button class="question-option" type="button" data-index="${index}">${opt}</button>`).join('');
+    qsa('.question-option', optionsWrap).forEach(btn=>btn.addEventListener('click', ()=>{
+      const selected = Number(btn.dataset.index);
+      const session = getGameSession();
+      const correct = selected === Number(wrap.dataset.answer);
+      if(correct){
+        const newSession = {...session, streak:(session.streak || 0) + 1};
+        setGameSession(newSession);
+        refreshStreak();
+        if(newSession.streak >= 3){
+          setGameReward({code:'BONUS10'});
+          result.innerHTML = `<div class="notice success">Odlično. Zbral si 3 pravilne odgovore in odklenil kodo <strong>BONUS10</strong>.</div>`;
+          meta.textContent = 'Koda BONUS10 je pripravljena za uporabo v košarici.';
+          toast('Bonus koda BONUS10 je odklenjena.', 'success');
+        } else {
+          result.innerHTML = `<div class="notice success">Pravilno. Nadaljuj na naslednje vprašanje.</div>`;
+          meta.textContent = `Še ${3 - newSession.streak} pravilnih odgovorov do nagrade.`;
+        }
+      } else {
+        setGameSession({...session, streak:0});
+        refreshStreak();
+        result.innerHTML = `<div class="notice error">To ni pravilen odgovor. Niz se je ponastavil, vprašanja pa se bodo nadaljevala naprej.</div>`;
+        meta.textContent = 'Poskusi znova in ponovno zgradi niz 3 pravilnih odgovorov.';
+      }
+    }));
+  }
+
+  nextBtn?.addEventListener('click', renderQuestion);
+  refreshStreak();
+  if(reward && result){
+    result.innerHTML = `<div class="notice success">Že imaš bonus kodo: <strong>${reward.code}</strong>. Lahko še vedno igraš naprej.</div>`;
+  }
+  renderQuestion();
 }
 function initCommon(){
   updateCartBadges();
