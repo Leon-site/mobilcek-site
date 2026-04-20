@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobilček Servis | Bela tehnika</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div data-include="header"></div>
+  <main class="container page-space">
+    <div class="page-hero small">
+      <p class="eyebrow">Bela tehnika</p>
+      <h1>Osnovni aparati za dom</h1>
+      <p>Pralni stroji, hladilniki, sesalniki in druga izbrana bela tehnika.</p>
+    </div>
+    <div class="product-grid" id="belaTehnikaProducts"></div>
+  </main>
+  <div data-include="footer"></div>
+  <div id="cartDrawer" class="cart-drawer hidden"></div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>site.renderLayout('bela-tehnika'); site.renderProductsByCategory('bela-tehnika','belaTehnikaProducts');</script>
+</body>
+</html>

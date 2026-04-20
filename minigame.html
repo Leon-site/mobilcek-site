@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobilček Servis | Mini igra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div data-include="header"></div>
+  <main class="container page-space">
+    <div class="page-hero small">
+      <p class="eyebrow">Mini igra</p>
+      <h1>Zadeni pravi kvadrat</h1>
+      <p>Imaš tri poskuse. Če zadeneš skriti kvadrat, dobiš bonus kodo <strong>IGRA10</strong> za 10 % dodatnega popusta.</p>
+    </div>
+    <section class="content-card">
+      <div id="minigameBoard" class="game-grid"></div>
+      <p id="gameStatus" class="game-status">Klikni na polje in poskusi srečo.</p>
+      <button class="btn btn-secondary" onclick="site.resetMinigame()">Nova igra</button>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <div id="cartDrawer" class="cart-drawer hidden"></div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>site.renderLayout('minigame'); site.initMinigame();</script>
+</body>
+</html>

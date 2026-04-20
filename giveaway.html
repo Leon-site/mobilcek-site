@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobilček Servis | Nagradna igra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div data-include="header"></div>
+  <main class="container page-space">
+    <div class="page-hero small">
+      <p class="eyebrow">Dobrodelna nagradna igra</p>
+      <h1>Pridobi si nagrado</h1>
+      <p>Prispevek za sodelovanje znaša <strong>1 €</strong>. Celoten izkupiček je namenjen dobrodelnim namenom. Glavna nagrada je <strong>grafična kartica RTX 5090</strong>.</p>
+    </div>
+
+    <section class="content-grid">
+      <article class="content-card">
+        <h2>Kako se včlaniti</h2>
+        <ol>
+          <li>Izpolni prijavni obrazec.</li>
+          <li>Potrdi, da se strinjaš s pravili.</li>
+          <li>Plačilo prijavnine je 1 €.</li>
+          <li>Po oddaji se tvoj vnos shrani lokalno kot demo prijava.</li>
+        </ol>
+      </article>
+      <article class="content-card">
+        <h2>Pravila</h2>
+        <ul>
+          <li>Vsaka oseba lahko odda več prijav, če je vsaka plačana posebej.</li>
+          <li>Dobrodelni prispevek ni vračljiv.</li>
+          <li>Nagrajenec je izbran naključno po koncu trajanja akcije.</li>
+          <li>Za javno objavo uporabi svoje dejanske pravne pogoje in datum zaključka.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="content-card form-card">
+      <h2>Prijava v nagradno igro</h2>
+      <form id="giveawayForm" class="stack-form" onsubmit="site.submitGiveaway(event)">
+        <div class="form-grid">
+          <label>Ime in priimek<input required name="name" type="text" /></label>
+          <label>E-pošta<input required name="email" type="email" /></label>
+        </div>
+        <label><input required type="checkbox" name="rules" /> Strinjam se s pravili nagradne igre in razumem, da je prijavnina 1 € dobrodelni prispevek.</label>
+        <button class="btn btn-primary" type="submit">Oddaj prijavo</button>
+      </form>
+      <div id="giveawayMessage" class="info-box hidden"></div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <div id="cartDrawer" class="cart-drawer hidden"></div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>site.renderLayout('giveaway');</script>
+</body>
+</html>

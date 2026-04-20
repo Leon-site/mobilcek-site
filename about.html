@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobilček Servis | O nas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div data-include="header"></div>
+  <main class="container page-space">
+    <div class="page-hero small">
+      <p class="eyebrow">O nas</p>
+      <h1>Jasna trgovina, jasne informacije</h1>
+      <p>Ta stran je narejena kot moderna statična predstavitev z osnovnimi kategorijami, košarico, popusti, recenzijami in dobrodelno nagradno igro.</p>
+    </div>
+
+    <section class="content-grid">
+      <article class="content-card">
+        <h2>Kaj ponujamo</h2>
+        <p>Telefonijo, računalnike, belo tehniko, preprost pregled izdelkov in hiter nakupni tok brez nepotrebne navlake.</p>
+      </article>
+      <article class="content-card">
+        <h2>Naš cilj</h2>
+        <p>Uporabniku ponuditi moderno, hitro in pregledno izkušnjo, ki deluje tudi na preprostem statičnem hostingu.</p>
+      </article>
+      <article class="content-card">
+        <h2>Opomba</h2>
+        <p>Če želiš pravo administracijo, odgovore na recenzije po e-pošti in varno prijavo, boš potreboval backend. Ta paket je namenjen zelo enostavni postavitvi.</p>
+      </article>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <div id="cartDrawer" class="cart-drawer hidden"></div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>site.renderLayout('about');</script>
+</body>
+</html>
