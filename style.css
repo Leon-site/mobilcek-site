@@ -747,3 +747,48 @@ textarea { min-height: 130px; resize: vertical; }
     font-size: 1.6rem;
   }
 }
+
+
+/* --- v5 user colors refresh --- */
+.footer-rich{
+  background:
+    radial-gradient(circle at top right, rgba(226,27,47,.18), transparent 28%),
+    linear-gradient(180deg, #09090c 0%, #111216 60%, #17181d 100%);
+  color: #fff;
+}
+.footer-strip{
+  background: linear-gradient(180deg, #121319, #0d0e13);
+  color: #eef1f5;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.footer-strip-left span{
+  color: rgba(255,255,255,.72);
+}
+.payment-chips span,
+.footer-socials span{
+  background: rgba(226,27,47,.14);
+  border: 1px solid rgba(226,27,47,.35);
+  color: #fff;
+}
+.newsletter-row{
+  box-shadow: 0 14px 34px rgba(0,0,0,.25);
+}
+.footer-submit{
+  background: linear-gradient(135deg, #ff3650, #d0152d);
+  color: #fff;
+}
+.footer-input{
+  background: #fff;
+}
+.quote-box{
+  background: linear-gradient(135deg, rgba(226,27,47,.16), rgba(255,255,255,.05));
+  border: 1px solid rgba(226,27,47,.24);
+}
+.product-image-photo{
+  background:
+    radial-gradient(circle at top right, rgba(226,27,47,.14), transparent 26%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+}
+.product-image-photo img{
+  border-radius: 16px;
+}

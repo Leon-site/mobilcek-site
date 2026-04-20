@@ -1,18 +1,18 @@
 const PRODUCTS = [
-  {id:'tel1',cat:'telefonija',name:'Apple iPhone 17 128 GB',price:979,oldPrice:1099,image:'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-compare-iphone-17-202509?.v=M0dlUVBobHVpY1h1dmlaR3RZekpENGh0eTVTNkN2NWpWZVAwbzMwQlBCTkxxZU5scXpES1hnUm96ckN1R2pZN215d1FhSDJ0bkR0ZGZtUjZJNmFveFo2eWNJSlJFRDM1UWQ2eUozZ1l5ZDA&fmt=png-alpha&hei=512&wid=400',tags:['Apple','128 GB','OLED'],desc:'Aktualni iPhone z elegantnim dizajnom in hitrim delovanjem.'},
-  {id:'tel2',cat:'telefonija',name:'Samsung Galaxy S24 128 GB',price:899,oldPrice:999,image:'https://images.samsung.com/ie/smartphones/galaxy-s24/images/galaxy-s24-highlights-kv.jpg?imbypass=true',tags:['Samsung','128 GB','Galaxy AI'],desc:'Kompakten premijski telefon z zmogljivo kamero in AI funkcijami.'},
-  {id:'tel3',cat:'telefonija',name:'Google Pixel 9 128 GB',price:799,oldPrice:899,icon:'📱',tags:['Google','128 GB','AI kamera'],desc:'Čist Android, dobra kamera in sodoben AI pristop.'},
-  {id:'tel4',cat:'telefonija',name:'Xiaomi 14T 256 GB',price:383,oldPrice:449,icon:'📲',tags:['Xiaomi','256 GB','Leica'],desc:'Ugodnejši flagship z veliko prostora in hitrim polnjenjem.'},
+  {id:'tel1',cat:'telefonija',name:'Apple iPhone 17 128 GB',price:979,oldPrice:1099,image:'assets/prod-iphone17.png',tags:['Apple','128 GB','OLED'],desc:'Aktualni iPhone z elegantnim dizajnom in hitrim delovanjem.'},
+  {id:'tel2',cat:'telefonija',name:'Samsung Galaxy S24 128 GB',price:899,oldPrice:999,image:'assets/prod-galaxys24.png',tags:['Samsung','Galaxy AI','128 GB'],desc:'Kompakten premijski telefon z zmogljivo kamero in AI funkcijami.'},
+  {id:'tel3',cat:'telefonija',name:'Google Pixel 9 128 GB',price:799,oldPrice:899,image:'assets/prod-pixel9.png',tags:['Google','Android','AI kamera'],desc:'Čist Android, dobra kamera in sodoben AI pristop.'},
+  {id:'tel4',cat:'telefonija',name:'Xiaomi 14T 256 GB',price:383,oldPrice:449,image:'assets/prod-xiaomi14t.png',tags:['Xiaomi','256 GB','Leica'],desc:'Ugodnejši flagship z veliko prostora in hitrim polnjenjem.'},
 
-  {id:'pc1',cat:'racunalniki',name:'ASUS TUF Gaming A15',price:764,oldPrice:899,icon:'💻',tags:['Gaming','RTX 3050','16 GB RAM'],desc:'Gaming prenosnik za igre, ustvarjanje in hitrejše delo.'},
-  {id:'pc2',cat:'racunalniki',name:'Lenovo IdeaPad Slim 3 15',price:769.99,oldPrice:849.99,icon:'🧠',tags:['Copilot+ PC','16 GB RAM','1 TB SSD'],desc:'Tanjši sodoben prenosnik za produktivnost in vsakdan.'},
-  {id:'pc3',cat:'racunalniki',name:'Gaming monitor 27” 144 Hz',price:279,oldPrice:329,icon:'🖥️',tags:['27 inch','144 Hz','IPS'],desc:'Prijeten gaming monitor z gladkim prikazom slike.'},
-  {id:'pc4',cat:'racunalniki',name:'Mehanska tipkovnica RGB',price:109,oldPrice:139,icon:'⌨️',tags:['RGB','Hot-swap'],desc:'Natančna tipkovnica za gaming in pisanje.'},
+  {id:'pc1',cat:'racunalniki',name:'ASUS TUF Gaming A15',price:764,oldPrice:899,image:'assets/prod-asus-a15.png',tags:['Gaming','RTX','16 GB RAM'],desc:'Gaming prenosnik za igre, ustvarjanje in hitrejše delo.'},
+  {id:'pc2',cat:'racunalniki',name:'Lenovo IdeaPad Slim 3 15',price:769.99,oldPrice:849.99,image:'assets/prod-lenovo-slim3.png',tags:['Copilot+','16 GB RAM','1 TB SSD'],desc:'Tanjši sodoben prenosnik za produktivnost in vsakdan.'},
+  {id:'pc3',cat:'racunalniki',name:'Gaming monitor 27” 144 Hz',price:279,oldPrice:329,image:'assets/prod-monitor27.png',tags:['27 inch','144 Hz','IPS'],desc:'Prijeten gaming monitor z gladkim prikazom slike.'},
+  {id:'pc4',cat:'racunalniki',name:'Mehanska tipkovnica RGB',price:109,oldPrice:139,image:'assets/prod-keyboard.png',tags:['RGB','Hot-swap','Gaming'],desc:'Natančna tipkovnica za gaming in pisanje.'},
 
-  {id:'home1',cat:'bela-tehnika',name:'Bosch Series 6 pralni stroj 10 kg',price:699.99,oldPrice:799.99,image:'https://www.euronics.ee/UserFiles/Products/Images/430920-649239.avif',tags:['Bosch','10 kg','1400 rpm'],desc:'Kakovosten pralni stroj z i-DOS sistemom in hitrim programom.'},
-  {id:'home2',cat:'bela-tehnika',name:'LG pralni stroj 9 kg',price:429.99,oldPrice:479.99,icon:'🧺',tags:['LG','9 kg','A razred'],desc:'Praktičen stroj za vsakdanjo uporabo in manjše prostore.'},
-  {id:'home3',cat:'bela-tehnika',name:'Bosch hladilnik kombinirani',price:799,oldPrice:949,icon:'🧊',tags:['No Frost','XL'],desc:'Prostoren hladilnik za sodoben dom.'},
-  {id:'home4',cat:'bela-tehnika',name:'Kavni aparat Aroma',price:259,oldPrice:319,icon:'☕',tags:['15 bar','Latte'],desc:'Za dober espresso in hitro pripravo domače kave.'}
+  {id:'home1',cat:'bela-tehnika',name:'Bosch Series 6 pralni stroj 10 kg',price:699.99,oldPrice:799.99,image:'assets/prod-bosch-washer.png',tags:['Bosch','10 kg','i-DOS'],desc:'Kakovosten pralni stroj z naprednimi programi.'},
+  {id:'home2',cat:'bela-tehnika',name:'LG pralni stroj 9 kg',price:429.99,oldPrice:479.99,image:'assets/prod-lg-washer.png',tags:['LG','9 kg','A razred'],desc:'Praktičen stroj za vsakdanjo uporabo in manjše prostore.'},
+  {id:'home3',cat:'bela-tehnika',name:'Bosch hladilnik kombinirani',price:799,oldPrice:949,image:'assets/prod-bosch-fridge.png',tags:['Bosch','No Frost','XL'],desc:'Prostoren hladilnik za sodoben dom.'},
+  {id:'home4',cat:'bela-tehnika',name:'Kavni aparat Aroma',price:259,oldPrice:319,image:'assets/prod-coffee.png',tags:['15 bar','Latte','Kava'],desc:'Za dober espresso in hitro pripravo domače kave.'}
 ];
 
 const REVIEWS_KEY = 'mobilcek_reviews_v2';
