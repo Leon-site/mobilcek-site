@@ -1,18 +1,18 @@
 const PRODUCTS = [
-  {id:'tel1',cat:'telefonija',name:'Mobilček X12 Pro',price:899,oldPrice:1099,icon:'📱',tags:['5G','256 GB','AMOLED'],desc:'Zmogljiv pametni telefon za vsak dan.'},
-  {id:'tel2',cat:'telefonija',name:'Mobilček Air Lite',price:499,oldPrice:629,icon:'📲',tags:['128 GB','OLED','Dual SIM'],desc:'Lahek telefon z odlično baterijo.'},
-  {id:'tel3',cat:'telefonija',name:'Brezžične slušalke Sonic',price:129,oldPrice:169,icon:'🎧',tags:['ANC','Bluetooth 5.3'],desc:'Čist zvok in udobje za cel dan.'},
-  {id:'tel4',cat:'telefonija',name:'Pametna ura Active',price:199,oldPrice:249,icon:'⌚',tags:['GPS','AMOLED'],desc:'Pametna ura za šport in vsakdan.'},
+  {id:'tel1',cat:'telefonija',name:'Apple iPhone 17 128 GB',price:979,oldPrice:1099,image:'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-compare-iphone-17-202509?.v=M0dlUVBobHVpY1h1dmlaR3RZekpENGh0eTVTNkN2NWpWZVAwbzMwQlBCTkxxZU5scXpES1hnUm96ckN1R2pZN215d1FhSDJ0bkR0ZGZtUjZJNmFveFo2eWNJSlJFRDM1UWQ2eUozZ1l5ZDA&fmt=png-alpha&hei=512&wid=400',tags:['Apple','128 GB','OLED'],desc:'Aktualni iPhone z elegantnim dizajnom in hitrim delovanjem.'},
+  {id:'tel2',cat:'telefonija',name:'Samsung Galaxy S24 128 GB',price:899,oldPrice:999,image:'https://images.samsung.com/ie/smartphones/galaxy-s24/images/galaxy-s24-highlights-kv.jpg?imbypass=true',tags:['Samsung','128 GB','Galaxy AI'],desc:'Kompakten premijski telefon z zmogljivo kamero in AI funkcijami.'},
+  {id:'tel3',cat:'telefonija',name:'Google Pixel 9 128 GB',price:799,oldPrice:899,icon:'📱',tags:['Google','128 GB','AI kamera'],desc:'Čist Android, dobra kamera in sodoben AI pristop.'},
+  {id:'tel4',cat:'telefonija',name:'Xiaomi 14T 256 GB',price:383,oldPrice:449,icon:'📲',tags:['Xiaomi','256 GB','Leica'],desc:'Ugodnejši flagship z veliko prostora in hitrim polnjenjem.'},
 
-  {id:'pc1',cat:'racunalniki',name:'Gaming PC Nitro RTX',price:1899,oldPrice:2199,icon:'🖥️',tags:['RTX','32 GB RAM'],desc:'Gaming računalnik za zahtevne igre.'},
-  {id:'pc2',cat:'racunalniki',name:'Prenosnik UltraBook 15',price:999,oldPrice:1199,icon:'💻',tags:['16 GB RAM','SSD'],desc:'Eleganten in hiter prenosnik za delo.'},
-  {id:'pc3',cat:'racunalniki',name:'Monitor Vision 27"',price:279,oldPrice:329,icon:'🖲️',tags:['144 Hz','IPS'],desc:'Gladko gibanje in ostro sliko.'},
-  {id:'pc4',cat:'racunalniki',name:'Mehanska tipkovnica Pro',price:109,oldPrice:139,icon:'⌨️',tags:['RGB','Hot-swap'],desc:'Natančen odziv in moden dizajn.'},
+  {id:'pc1',cat:'racunalniki',name:'ASUS TUF Gaming A15',price:764,oldPrice:899,icon:'💻',tags:['Gaming','RTX 3050','16 GB RAM'],desc:'Gaming prenosnik za igre, ustvarjanje in hitrejše delo.'},
+  {id:'pc2',cat:'racunalniki',name:'Lenovo IdeaPad Slim 3 15',price:769.99,oldPrice:849.99,icon:'🧠',tags:['Copilot+ PC','16 GB RAM','1 TB SSD'],desc:'Tanjši sodoben prenosnik za produktivnost in vsakdan.'},
+  {id:'pc3',cat:'racunalniki',name:'Gaming monitor 27” 144 Hz',price:279,oldPrice:329,icon:'🖥️',tags:['27 inch','144 Hz','IPS'],desc:'Prijeten gaming monitor z gladkim prikazom slike.'},
+  {id:'pc4',cat:'racunalniki',name:'Mehanska tipkovnica RGB',price:109,oldPrice:139,icon:'⌨️',tags:['RGB','Hot-swap'],desc:'Natančna tipkovnica za gaming in pisanje.'},
 
-  {id:'home1',cat:'bela-tehnika',name:'Pralni stroj Fresh 9 kg',price:549,oldPrice:679,icon:'🧺',tags:['A razred','Inverter'],desc:'Tiho pranje in pametni programi.'},
-  {id:'home2',cat:'bela-tehnika',name:'Hladilnik CoolMax XL',price:799,oldPrice:949,icon:'🧊',tags:['No Frost','XL'],desc:'Velik hladilnik za sodobni dom.'},
-  {id:'home3',cat:'bela-tehnika',name:'Sesalnik Turbo Clean',price:189,oldPrice:239,icon:'🧹',tags:['Turbo','HEPA'],desc:'Močan sesalnik z odličnim filtrom.'},
-  {id:'home4',cat:'bela-tehnika',name:'Kavni aparat Aroma',price:259,oldPrice:319,icon:'☕',tags:['15 bar','Latte'],desc:'Bogata kava in preprost nadzor.'}
+  {id:'home1',cat:'bela-tehnika',name:'Bosch Series 6 pralni stroj 10 kg',price:699.99,oldPrice:799.99,image:'https://www.euronics.ee/UserFiles/Products/Images/430920-649239.avif',tags:['Bosch','10 kg','1400 rpm'],desc:'Kakovosten pralni stroj z i-DOS sistemom in hitrim programom.'},
+  {id:'home2',cat:'bela-tehnika',name:'LG pralni stroj 9 kg',price:429.99,oldPrice:479.99,icon:'🧺',tags:['LG','9 kg','A razred'],desc:'Praktičen stroj za vsakdanjo uporabo in manjše prostore.'},
+  {id:'home3',cat:'bela-tehnika',name:'Bosch hladilnik kombinirani',price:799,oldPrice:949,icon:'🧊',tags:['No Frost','XL'],desc:'Prostoren hladilnik za sodoben dom.'},
+  {id:'home4',cat:'bela-tehnika',name:'Kavni aparat Aroma',price:259,oldPrice:319,icon:'☕',tags:['15 bar','Latte'],desc:'Za dober espresso in hitro pripravo domače kave.'}
 ];
 
 const REVIEWS_KEY = 'mobilcek_reviews_v2';
@@ -109,8 +109,11 @@ function getReviews(){ initReviews(); return JSON.parse(localStorage.getItem(REV
 function saveReviews(reviews){ localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews)); }
 function stars(n){ return '★'.repeat(n) + '☆'.repeat(5-n); }
 function productCard(p){
-  return `<article class="product-card">
-    <div class="product-image">${p.icon}</div>
+  const visual = p.image
+    ? `<div class="product-image product-image-photo"><img src="${p.image}" alt="${p.name}" loading="lazy" referrerpolicy="no-referrer"></div>`
+    : `<div class="product-image">${p.icon || '🛍️'}</div>`;
+  return `<article class="product-card" id="${p.id}">
+    ${visual}
     <div class="product-meta">
       <div>
         <div class="product-title">${p.name}</div>
@@ -123,7 +126,7 @@ function productCard(p){
         <div class="old-price">${euro(p.oldPrice)}</div>
         <div class="price">${euro(p.price)}</div>
       </div>
-      <div class="badge">Popust</div>
+      <div class="badge">Akcija</div>
     </div>
     <div class="product-actions top-space">
       <button class="btn btn-secondary" onclick="addToCart('${p.id}')">Dodaj</button>
@@ -355,6 +358,31 @@ function bindMinigame(){
   }
   renderQuestion();
 }
+
+const QUOTES = [
+  'Dobra ponudba ni glasna. Je jasna, poštena in hitra.',
+  'Najboljša trgovina je tista, kjer uporabnik takoj ve, kaj klikniti.',
+  'Preprost nakup je pogosto najbolj profesionalen nakup.',
+  'Servis ni samo popravilo. Je občutek zaupanja.',
+  'Lep UI naredi prvi vtis, poštene informacije pa zadržijo stranko.',
+  'Košarica mora biti jasna, ne zapletena.',
+  'Majhna izboljšava uporabniške izkušnje pogosto naredi največjo razliko.'
+];
+
+function rotateQuote(){
+  const quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+  qsa('#quoteText, #quoteTextHome').forEach(el => { if(el) el.textContent = quote; });
+}
+function bindNewsletter(){
+  qs('#newsletterForm')?.addEventListener('submit', e=>{
+    e.preventDefault();
+    const email = qs('#newsletterEmail')?.value?.trim();
+    if(!email) return toast('Vpiši e-mail naslov.', 'error');
+    toast('Prijava na e-novice je shranjena v demo načinu.', 'success');
+    e.target.reset();
+  });
+}
+
 function initCommon(){
   updateCartBadges();
   qs('#searchBtn')?.addEventListener('click', handleSearch);
@@ -364,6 +392,6 @@ function initCommon(){
   renderProductGrid('#pcProducts','racunalniki');
   renderProductGrid('#whiteProducts','bela-tehnika');
   renderCartPage();
-  initReviews(); renderReviews(); bindReviewForm(); bindAdminPanel(); bindMinigame();
+  initReviews(); renderReviews(); bindReviewForm(); bindAdminPanel(); bindMinigame(); bindNewsletter(); rotateQuote(); setInterval(rotateQuote, 60000);
 }
 document.addEventListener('DOMContentLoaded', initCommon);

@@ -68,10 +68,10 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="notice warn">Cene in modeli so nastavljeni kot referenčne predstavitve aktualnih naprav in ponudb.</div><div class="section-head">
           <div>
             <h2>Osnovne vrste izdelkov</h2>
-            <p>Pregledna postavitev po glavnih kategorijah, z jasnimi teksti in hitrim dostopom.</p>
+            <p>Mobilna prijaznost, čiste kartice, hitri prehodi in bolj humana predstavitev ponudbe za telefon, računalnik in dom.</p>
           </div>
         </div>
         <div class="grid-cats">
@@ -128,11 +128,27 @@
       </div>
     </section>
 
-    <section class="section" id="featured">
+    
+<section class="section">
+  <div class="container">
+    <div class="home-highlight-grid">
+      <article class="home-highlight-card hero-mini">
+        <div class="ribbon">Novo</div>
+        <h3>Phone-first uporabniška izkušnja</h3>
+        <p>Stran je zdaj bolj prijazna za telefon: večji gumbi, boljša razporeditev, lepši footer in jasnejša košarica.</p>
+      </article>
+      <article class="home-highlight-card quote-teaser">
+        <div class="quote-label">Quote of the minute</div>
+        <div class="quote-text" id="quoteTextHome">Dobra ponudba ni glasna. Je jasna, poštena in hitra.</div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section" id="featured">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Izpostavljeni izdelki</h2>
+            <h2>Izpostavljeni izdelki in realni modeli</h2>
             <p>Preprost katalog z jasno ceno, osnovnimi oznakami in gumbi za nakup.</p>
           </div>
           <a class="btn btn-secondary" href="cart.html">Poglej vse</a>
@@ -164,31 +180,83 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
+  
+<footer class="footer footer-rich">
+  <div class="footer-main">
+    <div class="container footer-grid-rich">
+      <div class="footer-col">
         <h4>Mobilček Servis</h4>
-        <p>Moderna demo trgovina, oblikovana po navdihu velikih tehničnih trgovin, vendar v svojem črno-rdečem slogu.</p>
+        <a href="o-nas.html">O podjetju</a>
+        <a href="o-nas.html#kontakt">Kontakti</a>
+        <a href="reviews.html">Mnenja strank</a>
+        <a href="nagradna-igra.html">Nagradna igra</a>
+        <a href="mini-game.html">Mini igra</a>
       </div>
-      <div>
-        <h4>Kategorije</h4>
-        <p><a href="telefonija.html">Telefonija</a></p>
-        <p><a href="racunalniki.html">Računalniki</a></p>
-        <p><a href="bela-tehnika.html">Bela tehnika</a></p>
+
+      <div class="footer-col">
+        <h4>Koristne informacije</h4>
+        <a href="telefonija.html">Telefonija</a>
+        <a href="racunalniki.html">Računalniki</a>
+        <a href="bela-tehnika.html">Bela tehnika</a>
+        <a href="cart.html">Košarica</a>
+        <a href="reviews.html">Recenzije</a>
       </div>
-      <div>
+
+      <div class="footer-col">
         <h4>Podpora</h4>
-        <p><a href="reviews.html">Recenzije</a></p>
-        <p><a href="cart.html">Košarica</a></p>
-        <p><a href="nagradna-igra.html">Nagradna igra</a></p>
+        <p>Pomoč pri naročilu</p>
+        <p>Demo plačilni korak</p>
+        <p>Jasni pogoji in kuponi</p>
+        <p>Email: info@mobilcek-servis.si</p>
+        <p>Pon–Pet: 09:00–17:00</p>
       </div>
-      <div>
-        <h4>O nas</h4>
-        <p><a href="o-nas.html">Preberi več o trgovini, poslanstvu in preglednih pravilih.</a></p>
+
+      <div class="footer-col footer-news">
+        <h3>Bodi prvi. Prijavi se na e-novice in prejmi akcije.</h3>
+        <form id="newsletterForm" class="newsletter-row">
+          <input class="footer-input" id="newsletterEmail" type="email" placeholder="Vpiši svoj e-mail naslov ...">
+          <button class="btn footer-submit" type="submit">Prijavi se</button>
+        </form>
+
+        <div class="footer-contact">
+          <div class="footer-contact-label">Pomoč in naročila</div>
+          <div class="footer-phone">01 362 60 00</div>
+          <div class="small">Podpora za demo predstavitev strani</div>
+        </div>
+
+        <div class="quote-box">
+          <div class="quote-label">Quote of the minute</div>
+          <div class="quote-text" id="quoteText">Vsak dober servis se začne z jasnim odgovorom.</div>
+        </div>
       </div>
     </div>
-    <div class="container footer-bottom">© 2026 Mobilček Servis. Statična demonstracijska trgovina.</div>
-  </footer>
-  <script src="app.js"></script>
+
+    <div class="container footer-bottom-rich">
+      <div>© 2026 Mobilček Servis. Vse pravice pridržane.</div>
+      <div class="payment-chips">
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>PayPal</span>
+        <span>Obroki</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    <div class="container footer-strip-inner">
+      <div class="footer-strip-left">
+        <strong>Informacije</strong>
+        <span>To je demo trgovina za predstavitev UI-ja, košarice, kuponov, recenzij in demo plačilnega koraka.</span>
+      </div>
+      <div class="footer-socials">
+        <span>FB</span>
+        <span>IG</span>
+        <span>YT</span>
+        <span>IN</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="app.js"></script>
 </body>
 </html>
